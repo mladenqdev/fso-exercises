@@ -15,9 +15,11 @@ const App = () => {
     )
   }
 
+  const Part = ({partName, noOfExercises}) => <p key={partName}><strong>Part name:</strong> {partName}, <strong>number of exercises</strong>: {noOfExercises}</p>
+
   const Content = ({courseParts}) => 
     courseParts.map((coursePart) => (
-      <p key={coursePart.partName}><strong>Part name:</strong> {coursePart.partName}, <strong>number of exercises</strong>: {coursePart.noOfExercises}</p>
+      <Part partName={coursePart.partName} noOfExercises={coursePart.noOfExercises} key={coursePart.partName} />
     ))
 
     const Total = ({ courseParts }) => {
